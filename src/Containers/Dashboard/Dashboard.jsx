@@ -12,7 +12,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import { Box, Container, Grid, Toolbar } from "@material-ui/core";
+import { Grid, Toolbar } from "@material-ui/core";
 import { Pie } from "react-chartjs-2";
 
 const data = {
