@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Dashboard from "./Containers/Dashboard/Dashboard";
+import ProjectsList from "./Containers/ProjectsList/ProjectsList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +27,7 @@ function App() {
         <div className={classes.toolbar}>
           <Toolbar />
           <Route path="/" exact component={Dashboard} />
+          <Route path="/projects-list" exact component={ProjectsList} />
         </div>
       </main>
     </div>

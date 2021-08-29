@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
@@ -9,9 +8,23 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MailIcon from "@material-ui/icons/Mail";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles, useTheme, withStyles } from "@material-ui/core/styles";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
+
+const StyledListItem = withStyles({
+  root: {
+    color: "black",
+    "&.Mui-selected": {
+      backgroundColor: "#e6f2f2",
+      color: "#ea384d",
+      borderRight: "3px solid #ea384d",
+      fontWeight: "bold",
+    },
+  },
+})(ListItem);
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -26,13 +39,28 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  drawerHeader: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    textDecoration: "none",
+    color: "#ea384d",
+  },
   drawerPaper: {
     width: drawerWidth,
   },
 }));
 
 function Sidebar(props) {
-  const { window } = props;
+  const { wind } = props;
+
+  const [routes] = useState([
+    { text: "Dashboard", pathname: "/" },
+    { text: "Projects", pathname: "/projects-list" },
+  ]);
+  const [activeRoute, setActiveRoute] = useState("Dashboard");
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -42,35 +70,35 @@ function Sidebar(props) {
   };
 
   const drawer = (
-    <div>
+    <>
       <div className={classes.toolbar} />
-      <Divider />
+      <div className={classes.drawerHeader}>
+        <FavoriteIcon /> Heartbeat
+      </div>
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {routes?.map((route, index) => (
+          <Link key={route?.path} to={route?.pathname}>
+            <StyledListItem
+              onClick={() => setActiveRoute(route?.text)}
+              button
+              key={route?.text}
+              selected={route?.text === activeRoute}
+            >
+              <ListItemIcon
+                style={{ color: route?.text === activeRoute ? "#ea384d" : "" }}
+              >
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={route?.text} />
+            </StyledListItem>
+          </Link>
         ))}
       </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+    </>
   );
 
   const container =
-    window !== undefined ? () => window().document.body : undefined;
+    wind !== undefined ? () => window().document.body : undefined;
 
   return (
     <>

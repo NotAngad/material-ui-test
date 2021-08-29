@@ -1,8 +1,8 @@
 import {
-  Button,
+  Box,
   Card,
-  CardActions,
   CardContent,
+  Grid,
   makeStyles,
   Typography,
 } from "@material-ui/core";
@@ -17,43 +17,47 @@ const useStyles = makeStyles({
     margin: "0 2px",
     transform: "scale(0.8)",
   },
-  title: {
-    fontSize: 14,
-  },
   pos: {
     marginBottom: 12,
   },
+  cardAlign: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
 
-export default function CardComponent() {
+export default function CardComponent({ data }) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card elevation={5} className={classes.root}>
       <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+        <Box m={1}>
+          <Typography variant="h5" gutterBottom color="textSecondary">
+            <Grid container>
+              <Grid
+                item
+                xs={1}
+                className={classes.cardAlign}
+                style={{ color: "#ea384d" }}
+              >
+                {data?.icon}
+              </Grid>
+              <Grid item xs={11}>
+                {data?.title}
+              </Grid>
+            </Grid>
+          </Typography>
+        </Box>
+        <Typography variant="h3" gutterBottom>
+          <Grid container>
+            <Grid item xs={2} className={classes.cardAlign}>
+              {data?.value}
+            </Grid>
+          </Grid>
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }

@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   .table-container {
     width: 360px;
