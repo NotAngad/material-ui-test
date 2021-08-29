@@ -29,7 +29,7 @@ export default function Dashbaord() {
       <Toolbar />
       <Grid container>
         {[0, 1].map((graph) => (
-          <Grid key={graph} item xs={6}>
+          <Grid key={graph} item xs={12} md={6}>
             {graph === 1 ? <ApexChart /> : <StatsChart />}
           </Grid>
         ))}
