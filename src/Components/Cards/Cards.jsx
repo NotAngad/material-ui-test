@@ -11,7 +11,7 @@ import React from "react";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    border: "3px solid #ea384d",
+    border: "2px solid #ea384d",
   },
   bullet: {
     display: "inline-block",
@@ -32,7 +32,7 @@ export default function CardComponent({ data }) {
   const classes = useStyles();
 
   return (
-    <Card elevation={2} className={classes.root}>
+    <Card className={classes.root}>
       <CardContent>
         <Box m={1}>
           <Typography variant="h5" gutterBottom color="textSecondary">
