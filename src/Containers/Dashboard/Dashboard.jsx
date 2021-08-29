@@ -5,7 +5,8 @@ import CardComponent from "../../Components/Cards/Cards";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import BugReportIcon from "@material-ui/icons/BugReport";
 import LockIcon from "@material-ui/icons/Lock";
-import PieChartComponent from "../../Components/PieChart/PieChart";
+import ApexChart from "../../Components/LineChart/LineChart";
+import StatsChart from "../../Components/StatsChart/StatsChart";
 
 export default function Dashbaord() {
   const [state] = useState({
@@ -26,7 +27,13 @@ export default function Dashbaord() {
       </Grid>
 
       <Toolbar />
-      <PieChartComponent />
+      <Grid container>
+        {[0, 1].map((graph) => (
+          <Grid key={graph} item xs={6}>
+            {graph === 1 ? <ApexChart /> : <StatsChart />}
+          </Grid>
+        ))}
+      </Grid>
 
       <Toolbar />
       <TableComponent />

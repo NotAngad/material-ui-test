@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
+import DashboardIcon from "@material-ui/icons/Dashboard";
 import { makeStyles, useTheme, withStyles } from "@material-ui/core/styles";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { Link } from "react-router-dom";
@@ -88,7 +88,7 @@ function Sidebar(props) {
               <ListItemIcon
                 style={{ color: route?.text === activeRoute ? "#ea384d" : "" }}
               >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <DashboardIcon /> : <AccountTreeIcon />}
               </ListItemIcon>
               <ListItemText primary={route?.text} />
             </StyledListItem>
