@@ -37,7 +37,7 @@ export default function ProjectCardsComponent() {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} elevation={3}>
+    <Card className={classes.root} elevation={5}>
       <CardHeader
         action={
           <IconButton aria-label="settings">

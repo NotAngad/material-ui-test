@@ -17,6 +17,7 @@ const drawerWidth = 240;
 const StyledListItem = withStyles({
   root: {
     color: "black",
+    fontWeight: "bold",
     "&.Mui-selected": {
       backgroundColor: "#e6f2f2",
       color: "#ea384d",
