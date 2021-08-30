@@ -11,7 +11,7 @@ import React from "react";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    border: "2px solid #ea384d",
+    border: "2px solid #f50057",
   },
   bullet: {
     display: "inline-block",
@@ -41,7 +41,7 @@ export default function CardComponent({ data }) {
                 item
                 xs={1}
                 className={classes.cardAlign}
-                style={{ color: "#ea384d" }}
+                style={{ color: "#f50057" }}
               >
                 {data?.icon}
               </Grid>

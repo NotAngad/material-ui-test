@@ -14,7 +14,7 @@ export default function StatsChart() {
       },
     ],
     options: {
-      colors: ["#ea384d", "#26A0FC"],
+      colors: ["#f50057", "#26A0FC"],
       chart: {
         type: "bar",
         height: 350,

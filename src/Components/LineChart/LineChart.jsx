@@ -4,7 +4,7 @@ import React from "react";
 export default function LineChart() {
   const state = {
     options: {
-      colors: ["#ea384d", "#26A0FC"],
+      colors: ["#f50057", "#26A0FC"],
       chart: {
         id: "apexchart-example",
         toolbar: {

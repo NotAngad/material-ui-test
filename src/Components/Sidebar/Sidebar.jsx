@@ -20,8 +20,8 @@ const StyledListItem = withStyles({
     fontWeight: "bold",
     "&.Mui-selected": {
       backgroundColor: "#e6f2f2",
-      color: "#ea384d",
-      borderRight: "3px solid #ea384d",
+      color: "#f50057",
+      borderRight: "3px solid #f50057",
       fontWeight: "bold",
     },
   },
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     textDecoration: "none",
-    color: "#ea384d",
+    color: "#f50057",
   },
   drawerPaper: {
     width: drawerWidth,
@@ -86,7 +86,7 @@ function Sidebar(props) {
               selected={route?.text === activeRoute}
             >
               <ListItemIcon
-                style={{ color: route?.text === activeRoute ? "#ea384d" : "" }}
+                style={{ color: route?.text === activeRoute ? "#f50057" : "" }}
               >
                 {index % 2 === 0 ? <DashboardIcon /> : <AccountTreeIcon />}
               </ListItemIcon>
