@@ -26,10 +26,32 @@ const CalendarComponent = (props) => (
       localizer={localizer}
       events={[
         {
-          title: "Event hai aaj",
+          title: "Milestone 1",
           allDay: false,
           start: new Date(),
-          end: new Date(),
+          end: new Date(
+            new Date().setTime(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)
+          ),
+        },
+        {
+          title: "Milestone 2",
+          allDay: false,
+          start: new Date().setTime(
+            new Date().getTime() + 8 * 24 * 60 * 60 * 1000
+          ),
+          end: new Date(
+            new Date().setTime(new Date().getTime() + 14 * 24 * 60 * 60 * 1000)
+          ),
+        },
+        {
+          title: "Milestone 3",
+          allDay: false,
+          start: new Date().setTime(
+            new Date().getTime() + 15 * 24 * 60 * 60 * 1000
+          ),
+          end: new Date(
+            new Date().setTime(new Date().getTime() + 21 * 24 * 60 * 60 * 1000)
+          ),
         },
       ]}
       eventPropGetter={eventStyleGetter}

@@ -5,6 +5,9 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Box, Typography } from "@material-ui/core";
 import CalendarComponent from "../Calendar/Calendar";
+import TicketsComponent from "../TicketsComponent/TicketsComponent";
+import RequirementsComponent from "../Requirements/Requirements";
+import TableComponent from "../Table/Table";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -68,17 +71,21 @@ export default function TabsComponent() {
       >
         <Tab label="Timeline" {...a11yProps(0)} />
         <Tab label="Requirements" {...a11yProps(1)} />
-        <Tab label="Tickets" {...a11yProps(2)} />
+        <Tab label="Members" {...a11yProps(2)} />
+        <Tab label="Tickets" {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0}>
         <br />
         <CalendarComponent />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <RequirementsComponent />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <TableComponent />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <TicketsComponent />
       </TabPanel>
     </Paper>
   );

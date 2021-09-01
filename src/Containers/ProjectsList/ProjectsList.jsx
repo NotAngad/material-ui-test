@@ -1,4 +1,5 @@
-import { Grid, InputAdornment, TextField } from "@material-ui/core";
+import { Fab, Grid, InputAdornment, TextField } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
 import SearchIcon from "@material-ui/icons/Search";
 import React from "react";
 import ProjectCardsComponent from "../../Components/ProjectCards/ProjectCards";
@@ -6,8 +7,8 @@ import ProjectCardsComponent from "../../Components/ProjectCards/ProjectCards";
 export default function ProjectsList() {
   return (
     <>
-      <Grid container>
-        <Grid item xs={12}>
+      <Grid container item spacing={2}>
+        <Grid item xs={12} md={10}>
           <TextField
             color="secondary"
             variant="outlined"
@@ -21,6 +22,26 @@ export default function ProjectsList() {
               ),
             }}
           />
+        </Grid>
+        <Grid
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          item
+          xs={12}
+          md={2}
+        >
+          <Fab
+            variant="extended"
+            size="medium"
+            color="secondary"
+            aria-label="Add"
+          >
+            <AddIcon />
+            Project
+          </Fab>
         </Grid>
       </Grid>
 
