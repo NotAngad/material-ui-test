@@ -3,11 +3,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Grid, Typography } from "@material-ui/core";
 import CalendarComponent from "../Calendar/Calendar";
 import TicketsComponent from "../TicketsComponent/TicketsComponent";
 import RequirementsComponent from "../Requirements/Requirements";
-import TableComponent from "../Table/Table";
+import ProfileCardComponent from "../ProfileCard/ProfileCard";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -82,7 +82,13 @@ export default function TabsComponent() {
         <RequirementsComponent />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <TableComponent />
+        <Grid spacing={2} container>
+          {[0, 1, 2, 5, 6, 4].map((value) => (
+            <Grid key={value} item xs={4}>
+              <ProfileCardComponent />
+            </Grid>
+          ))}
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={3}>
         <TicketsComponent />
