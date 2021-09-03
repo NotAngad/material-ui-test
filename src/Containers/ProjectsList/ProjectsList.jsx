@@ -38,6 +38,7 @@ export default function ProjectsList() {
             size="medium"
             color="secondary"
             aria-label="Add"
+            href="/create-project"
           >
             <AddIcon />
             Project

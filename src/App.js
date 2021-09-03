@@ -2,6 +2,7 @@ import { makeStyles, Toolbar } from "@material-ui/core";
 import { Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
+import CreateProject from "./Containers/CreateProject/CreateProject";
 import Dashboard from "./Containers/Dashboard/Dashboard";
 import ProjectDetails from "./Containers/ProjectDetails/ProjectDetails";
 import ProjectsList from "./Containers/ProjectsList/ProjectsList";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" exact component={Dashboard} />
           <Route path="/projects-list" exact component={ProjectsList} />
           <Route path="/project-details" exact component={ProjectDetails} />
+          <Route path="/create-project" exact component={CreateProject} />
         </div>
       </main>
     </div>
