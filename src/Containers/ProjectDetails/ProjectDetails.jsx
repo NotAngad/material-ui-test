@@ -1,34 +1,34 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import AddIcon from "@material-ui/icons/Add";
-import TabsComponent from "../../Components/Tabs/Tabs";
-import { Fab, Grid } from "@material-ui/core";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AddIcon from '@material-ui/icons/Add';
+import { Fab, Grid } from '@material-ui/core';
+import TabsComponent from '../../Components/Tabs/Tabs';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: "100%",
+    maxWidth: '100%',
   },
   members: {
-    color: "#ea384d",
-    display: "flex",
-    alignItems: "center",
+    color: '#ea384d',
+    display: 'flex',
+    alignItems: 'center',
   },
   projectStats: {
-    display: "flex",
+    display: 'flex',
   },
   statButton: {
     flexGrow: 0.2,
   },
   memberStats: {
     color: theme.palette.secondary.main,
-    marginLeft: "10px",
-    display: "flex",
-    alignItems: "center",
+    marginLeft: '10px',
+    display: 'flex',
+    alignItems: 'center',
     flexGrow: 5,
   },
 }));
@@ -69,7 +69,7 @@ export default function ProjectDetails() {
                     Members
                   </Fab>
                   <div className={classes?.memberStats}>
-                    <AccountCircleIcon /> <AccountCircleIcon />{" "}
+                    <AccountCircleIcon /> <AccountCircleIcon />{' '}
                     <AccountCircleIcon /> <AccountCircleIcon />
                   </div>
                 </div>
