@@ -19,8 +19,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// Push attempt
-
 function App() {
   const classes = useStyles();
 
