@@ -103,7 +103,6 @@ export default function ProjectDetails() {
             non ipsa incidunt sequi perspiciatis facilis aliquam mollitia quo
             ea!
           </Typography>
-
           <br />
           <TabsComponent />
         </CardContent>

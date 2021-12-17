@@ -5,26 +5,26 @@ import {
   Grid,
   makeStyles,
   Typography,
-} from "@material-ui/core";
-import React from "react";
+} from '@material-ui/core';
+import React from 'react';
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    border: "2px solid #f50057",
+    border: '2px solid #f50057',
   },
   bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
   },
   pos: {
     marginBottom: 12,
   },
   cardAlign: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
@@ -41,7 +41,7 @@ export default function CardComponent({ data }) {
                 item
                 xs={1}
                 className={classes.cardAlign}
-                style={{ color: "#f50057" }}
+                style={{ color: '#f50057' }}
               >
                 {data?.icon}
               </Grid>

@@ -1,8 +1,8 @@
-import { Fab, Grid, InputAdornment, TextField } from "@material-ui/core";
-import AddIcon from "@material-ui/icons/Add";
-import SearchIcon from "@material-ui/icons/Search";
-import React from "react";
-import ProjectCardsComponent from "../../Components/ProjectCards/ProjectCards";
+import React from 'react';
+import { Fab, Grid, InputAdornment, TextField } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import SearchIcon from '@material-ui/icons/Search';
+import ProjectCardsComponent from '../../Components/ProjectCards/ProjectCards';
 
 export default function ProjectsList() {
   return (
@@ -25,9 +25,9 @@ export default function ProjectsList() {
         </Grid>
         <Grid
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
           item
           xs={12}
@@ -49,7 +49,7 @@ export default function ProjectsList() {
       <br />
 
       <Grid spacing={3} container>
-        {[0, 1, 2, 4, 5, 6, 7, 8].map((item) => (
+        {[0, 1, 2, 4, 5, 6, 7, 8].map(item => (
           <Grid key={item} item xs={12} md={3}>
             <ProjectCardsComponent />
           </Grid>

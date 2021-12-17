@@ -1,16 +1,16 @@
-import { makeStyles, Toolbar } from "@material-ui/core";
-import { Route } from "react-router-dom";
-import Navbar from "./Components/Navbar/Navbar";
-import Sidebar from "./Components/Sidebar/Sidebar";
-import CreateProject from "./Containers/CreateProject/CreateProject";
-import Dashboard from "./Containers/Dashboard/Dashboard";
-import ProjectDetails from "./Containers/ProjectDetails/ProjectDetails";
-import ProjectsList from "./Containers/ProjectsList/ProjectsList";
-import "./index.css";
+import { makeStyles, Toolbar } from '@material-ui/core';
+import { Route } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import Sidebar from './Components/Sidebar/Sidebar';
+import CreateProject from './Containers/CreateProject/CreateProject';
+import Dashboard from './Containers/Dashboard/Dashboard';
+import ProjectDetails from './Containers/ProjectDetails/ProjectDetails';
+import ProjectsList from './Containers/ProjectsList/ProjectsList';
+import './index.css';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex",
+    display: 'flex',
   },
   toolbar: theme.mixins.toolbar,
   content: {
